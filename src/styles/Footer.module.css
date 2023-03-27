@@ -1,0 +1,70 @@
+.footer {
+    background-color: #413E70;
+    padding: 3rem;
+    color: white;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    margin-bottom: 5rem;
+}
+.visa {
+    background-color: #B6B3E4;
+    background-image: url("../../public/Visa.svg");
+    background-position: 6px;
+    background-repeat: no-repeat;
+    border-radius: .25rem;
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+    margin-right: .5rem;
+}
+.payment {
+    display: flex;
+    align-items: center;
+}
+.listwrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.list > li {
+    margin: 1rem 0;
+}
+.logowrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.icon {
+    margin: 0 1rem;
+}
+.contacticon {
+    margin-right: .25rem;
+}
+.contact {
+    margin: .5rem 0;
+}
+.social {
+    margin-top: 1rem;
+    display: flex; 
+}
+.social > a {
+    margin-right: 2rem;
+}
+.up {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    text-decoration: underline;
+}
+.up > a {
+    color: white;
+}

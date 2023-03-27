@@ -31,16 +31,16 @@ const Header = () => {
                 <li className={styles.item}>
                     <div className={styles.iconswrapper}>
                         <Link href="#">
-                            <img className={styles.lowerheadericon} src="User.svg"></img>
+                            <img className={styles.lowerheadericon} src="User_black.svg"></img>
                         </Link>
                         <Link href="#">
-                            <img className={styles.lowerheadericon} src="Star.svg"></img>
+                            <img className={styles.lowerheadericon} src="Star_black.svg"></img>
                         </Link>
                         <Link href="#">
-                            <img className={styles.lowerheadericon} src="Heart.svg"></img>
+                            <img className={styles.lowerheadericon} src="Heart_black.svg"></img>
                         </Link>
                         <Link href="#">
-                            <img className={styles.lowerheadericon} src="Shopping cart.svg"></img>
+                            <img className={styles.lowerheadericon} src="Shopping cart_black.svg"></img>
                         </Link>
                     </div>
                 </li>
