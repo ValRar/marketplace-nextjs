@@ -1,4 +1,4 @@
-.header {
+.upperheader {
     width: 100%;
     background: #F4F1FF;
     margin: 0;
@@ -15,7 +15,60 @@
     color: #6C6C6C;
     
 }
+.catalog > button {
+    background-color: #FFA927;
+    border-radius: 99999rem;
+    border: none;
+    padding: .7rem 2rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.catalog > button:hover {
+    background-color: #da880d;
+}
 .icon {
     vertical-align: middle;
     margin-right: .5rem;
+}
+.lowerheader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+}
+.searchinput {
+    border: none;
+    border-bottom: #E9E9E9 solid 1px;
+    padding: .25rem 0;
+    font-size: 1rem;
+}
+.searchinput:focus {
+    outline: none;
+    border-color: #6C6C6C;
+}
+.searchinput::placeholder {
+    color: #DEDEDE;
+}
+.searchbutton {
+    background-color: #FFA927;
+    border: none;
+    border-radius: 999999rem;
+    padding: .5rem .75rem;
+    margin-left: -.5rem;
+    cursor: pointer;
+}
+.searchbutton:hover {
+    background-color: #da880d;
+}
+.iconswrapper {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+}
+.lowerheadericon {
+    vertical-align: middle;
+    margin: 0 1rem;
 }
