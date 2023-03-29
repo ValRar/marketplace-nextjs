@@ -17,18 +17,16 @@ export default function Home() {
       </Head>
       <h1 className={styles.title}>Популярные товары</h1>
       <div className={styles.cardsWrapper}>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={5} title="Название товара">
+        </Card>
+        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
+        </Card>
+        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
+        </Card>
+        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
+        </Card>
+        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
+        </Card>
       </div>
       {/* https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg */}
     </>

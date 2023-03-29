@@ -52,4 +52,11 @@
     font-weight: 700;
     filter: drop-shadow(3px 5px 14px rgba(22, 193, 161, 0.25));
     cursor: pointer;
+    transition: transform .1s;
+}
+.buy:hover {
+    background-color: #14a187;
+}
+.buy:active {
+    transform: scale(0.8);
 }

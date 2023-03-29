@@ -22,7 +22,7 @@ const Header = () => {
                 <li className={styles.item}>Логотип</li>
                 <li className={styles.item + " " + styles.catalog}>
                     <input type="checkbox" id="expand-catalog" className="expand-checker" style={{display: 'none'}}></input>
-                    <label for="expand-catalog"><img src="Catalog.svg" className={styles.icon}></img>Каталог</label>
+                    <label htmlFor="expand-catalog"><img src="Catalog.svg" className={styles.icon}></img>Каталог</label>
                     <ul className={styles.catalogexpanded + " expand-item"}>
                         <li className={styles.catalogItem}>
                             <img src="Eyeglasses.svg" className={styles.catalogicon}></img><span>Очки</span><img src="Right-arrow.svg" className={styles.catalogArrow}></img>
