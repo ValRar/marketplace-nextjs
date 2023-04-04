@@ -1,12 +1,15 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Card from '../../components/card'
 
-const inter = Inter({ subsets: ['latin'] })
+export async function getServerSideProps(context) {
+  const productsRequest = await fetch("http://localhost:3000/api/getProducts")
+  const res = await productsRequest.json()
 
-export default function Home() {
+  return { props: {res} }
+}
+
+export default function Home({ res }) {
   return (
     <>
       <Head>
@@ -15,18 +18,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.featuredWrapper}>
+        <div className={styles.featured1}>
+          <img src='Featured-1.png'></img>
+          <span className={styles.featuredSpan}>На дни рождения</span>
+        </div>
+        <div className={styles.featuredSecondWrapper}>
+          <div className={styles.featuredThirdWrapper}>
+            <div className={styles.featured2}>
+              <span className={styles.featuredSpan}>Детям</span>
+              <img src='Featured-2.png'></img>
+            </div>
+            <div className={styles.featured3}>
+              <span className={styles.featuredSpan}>На свадьбу</span>
+              <img src='Featured-3.png'></img>
+            </div>
+          </div>
+          <div className={styles.featured4}>
+            <span className={styles.featuredSpan}>На новый год</span>
+            <img src='Featured-4.png'></img>
+          </div>
+        </div>
+      </div>
       <h1 className={styles.title}>Популярные товары</h1>
       <div className={styles.cardsWrapper}>
-        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={5} title="Название товара">
-        </Card>
-        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
-        </Card>
-        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
-        </Card>
-        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
-        </Card>
-        <Card amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-g/wc250/6387987172.jpg" price={10} rating={3} title="Название товара">
-        </Card>
+        {res.map(({id, title, amount, rating, price, img}) => (
+          <Card key={id} title={title} amount={amount} rating={rating} imagePath={img} price={price}></Card>
+        ))}
       </div>
       {/* https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg */}
     </>

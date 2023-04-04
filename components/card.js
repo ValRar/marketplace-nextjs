@@ -3,10 +3,10 @@ import styles from "../src/styles/Card.module.css"
 function renderStars (rate) {
     let dom = []
     for (let i = 0; i < rate; i++) {
-        dom.push(<img src="Star-filled.svg"></img>)
+        dom.push(<img src="Star-filled.svg" key={i}></img>)
     }
     for (let i = 0; i < 5 - rate; i++) {
-        dom.push(<img src="Star-notfilled.svg"></img>)
+        dom.push(<img src="Star-notfilled.svg" key={rate + i}></img>)
     }
     return dom
   }
