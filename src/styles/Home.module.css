@@ -56,6 +56,7 @@
 .featured3 > img {
   object-fit: scale-down;
   margin: 0 4.25rem;
+  margin-top: 1rem;
 }
 .featured4 {
   background-color: #FFECEC;

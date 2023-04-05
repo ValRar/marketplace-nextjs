@@ -3,10 +3,15 @@ import styles from '@/styles/Home.module.css'
 import Card from '../../components/card'
 
 export async function getServerSideProps(context) {
-  const productsRequest = await fetch("http://localhost:3000/api/getProducts")
-  const res = await productsRequest.json()
-
-  return { props: {res} }
+  const productsRequest = await fetch("http://localhost:3000/api/products/getBasic")
+  if (productsRequest.status === 200) {
+    const res = await productsRequest.json()
+    return { props: {res} }
+  } else {
+    const res = []
+    return { props: {res} }
+  }
+  
 }
 
 export default function Home({ res }) {
@@ -45,6 +50,7 @@ export default function Home({ res }) {
         {res.map(({id, title, amount, rating, price, img}) => (
           <Card key={id} title={title} amount={amount} rating={rating} imagePath={img} price={price}></Card>
         ))}
+        <Card title="Название" amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg" price={10} rating={3}></Card>
       </div>
       {/* https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg */}
     </>
