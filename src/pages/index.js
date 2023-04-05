@@ -50,7 +50,6 @@ export default function Home({ res }) {
         {res.map(({id, title, amount, rating, price, img}) => (
           <Card key={id} title={title} amount={amount} rating={rating} imagePath={img} price={price}></Card>
         ))}
-        <Card title="Название" amount={15} imagePath="https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg" price={10} rating={3}></Card>
       </div>
       {/* https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg */}
     </>
