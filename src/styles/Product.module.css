@@ -1,0 +1,93 @@
+.basicInfoContainer {
+    display: flex;
+    width: 100%;
+}
+.wrapper {
+    margin: 1rem 4rem;
+}
+.titleWrapper {
+    display: flex;
+}
+.iconsWrapper {
+    display: flex;
+    margin-left: 10rem;
+    align-items: center;
+}
+.icon {
+    height: 1.75rem;
+    margin: 0 .5rem;
+}
+.star {
+    margin-right: .5rem;
+}
+.amount {
+    color: #ABABAB;
+}
+.rating {
+    margin-bottom: .5rem;
+}
+.info {
+    margin-left: 5rem;
+}
+.price {
+    color: #FF4D4D;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.buy {
+    margin-top: 1rem;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: #4F28EA;
+    border-radius: 99999rem;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+.buy:hover {
+    background-color: #3512c5;
+}
+.accordionRadio {
+    display: none;
+}
+.accordion {
+    margin-top: 2rem;
+}
+.accordionLabel {
+    font-weight: 700;
+    color: #535353;
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+.accordionLabel::after {
+    content: url("/Accordion-arrow.svg");
+    float: right;
+    margin-right: 1rem;
+    transform: rotate(180deg);
+    transition: transform .2s;
+}
+.accordionContent {
+    border-bottom: 1px solid #E7E7E7;
+    font-weight: 400;
+    color: #848484;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s;
+    padding-left: 1rem;
+    padding-bottom: 0;
+}
+.accordionRadio:checked ~ .accordionLabel::after {
+    transform: none;
+}
+.accordionRadio:checked ~ .accordionContent {
+    max-height: 100vh;
+    padding-bottom: 1rem;
+}

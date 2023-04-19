@@ -1,3 +1,4 @@
+import Link from "next/link"
 import styles from "../src/styles/Card.module.css"
 
 function renderStars (rate) {
@@ -9,19 +10,21 @@ function renderStars (rate) {
         dom.push(<img src="Star-notfilled.svg" key={rate + i}></img>)
     }
     return dom
-  }
+}
 
-const Card = ({title, imagePath, amount, rating, price}) => (
+const Card = ({title, imagePath, amount, rating, price, id}) => (
     <div className={styles.card}>
-        <div className={styles.image}><img  src={imagePath}></img></div>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.amount}>В наличии: {amount} штук</div>
-        <div className={styles.ratingWrapper}>
-            <div className={styles.rating}>
-                {renderStars(rating)}
+        <Link href={`/product/${id}`}>
+            <div className={styles.image}><img src={imagePath}></img></div>
+            <div className={styles.title}><span>{title}</span></div>
+            <div className={styles.amount}>В наличии: {amount} штук</div>
+            <div className={styles.ratingWrapper}>
+                <div className={styles.rating}>
+                    {renderStars(rating)}
+                </div>
+                <div className={styles.price}>{price}р</div>
             </div>
-            <div className={styles.price}>{price}р</div>
-        </div>
+        </Link>
         <div className={styles.buy}>Добавить в корзину</div>
     </div>
 )

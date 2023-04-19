@@ -8,12 +8,15 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+input {
+  font-family: 'Roboto', sans-serif;
+}
+input:focus {
+  outline: none;
+}
 a {
   text-decoration: none;
   color: black;
-}
-a:hover {
-  text-decoration: underline;
 }
 img {
   vertical-align: middle;

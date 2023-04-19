@@ -1,9 +1,0 @@
-
-
-const productPage = ({}) => {
-    return (
-        <>
-        
-        </>
-    )
-}

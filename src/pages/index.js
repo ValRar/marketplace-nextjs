@@ -3,7 +3,7 @@ import styles from '@/styles/Home.module.css'
 import Card from '../../components/card'
 
 export async function getServerSideProps(context) {
-  const productsRequest = await fetch("http://localhost:3000/api/products/getBasic")
+  const productsRequest = await fetch(`http://localhost:3000/api/products/getBasic`)
   if (productsRequest.status === 200) {
     const res = await productsRequest.json()
     return { props: {res} }
@@ -11,7 +11,6 @@ export async function getServerSideProps(context) {
     const res = []
     return { props: {res} }
   }
-  
 }
 
 export default function Home({ res }) {
@@ -48,10 +47,9 @@ export default function Home({ res }) {
       <h1 className={styles.title}>Популярные товары</h1>
       <div className={styles.cardsWrapper}>
         {res.map(({id, title, amount, rating, price, img}) => (
-          <Card key={id} title={title} amount={amount} rating={rating} imagePath={img} price={price}></Card>
+            <Card key={id} title={title} amount={amount} rating={rating} imagePath={JSON.parse(img)[0]} price={price} id={id}></Card>
         ))}
       </div>
-      {/* https://cdn1.ozone.ru/s3/multimedia-q/wc1000/6268104842.jpg */}
     </>
   )
 }
