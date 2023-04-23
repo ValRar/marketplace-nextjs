@@ -24,3 +24,6 @@ img {
 .expand-checker:checked ~ .expand-item {
   display: block;
 }
+.link:hover {
+  text-decoration: underline;
+}

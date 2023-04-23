@@ -70,3 +70,9 @@
 .link:hover {
     color: #12a187;
 }
+.error {
+    color: rgb(243, 0, 73);
+    margin-top: .25rem;
+    font-size: .9rem;
+    display: none;
+}

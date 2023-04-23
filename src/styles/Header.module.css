@@ -149,3 +149,13 @@
     background-color: #F0F0F0;
     text-decoration: none;
 }
+.logOut {
+    border: none;
+    background-color: transparent;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    cursor: pointer;
+}
+.logOut:hover {
+    text-decoration: underline;
+}
