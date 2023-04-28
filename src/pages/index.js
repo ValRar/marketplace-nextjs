@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Card from '../../components/card'
+import { getBasic } from './api/products/getBasic'
 
 export async function getServerSideProps(context) {
-  const productsRequest = await fetch(`http://localhost:3000/api/products/getBasic`)
-  if (productsRequest.status === 200) {
-    const res = await productsRequest.json()
+  const productsRequest = await getBasic()
+  if (productsRequest) {
+    const res = JSON.parse(productsRequest)
     return { props: {res} }
   } else {
     const res = []

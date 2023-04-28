@@ -1,10 +1,12 @@
 import Slider from "../../../components/slider"
 import styles from "../../styles/Product.module.css"
+import { getById } from "../api/products/getById"
+import { getId } from "../api/products/getId"
 
 export async function getStaticPaths() {
-    const response = await fetch("http://localhost:3000/api/products/getId")
-    if (response.status === 200) {
-        const products = await response.json()
+    const response = await getId()
+    if (response) {
+        const products = JSON.parse(response)
         const paths = []
         products.map((id) => {
             paths.push({params: { id: `${id.id}` }})
@@ -17,8 +19,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-    const productsRequest = await fetch(`http://localhost:3000/api/products/getById?id=${params.id}`)
-    const res = await productsRequest.json()
+    const productsRequest = await getById(params.id)
+    const res = JSON.parse(productsRequest)
     return { props: {images: res[0].img, title: res[0].title, amount: res[0].amount, rating: res[0].rating, price: res[0].price, info: res[0].info} }
 }
 

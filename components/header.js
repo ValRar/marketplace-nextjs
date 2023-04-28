@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "../src/styles/Header.module.css";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
@@ -10,7 +11,15 @@ const Header = () => {
     function logOut() {
         Cookies.remove("authToken")
         router.push("/")
+        setSession(!session)
     }
+    const [session, setSession] = useState(false)
+
+    useEffect(() => {
+      const isCookie = Cookies.get("authToken") != undefined
+      console.log(isCookie)
+      setSession(isCookie)
+    })
 
   return (
     <div className={styles.header}>
@@ -28,7 +37,7 @@ const Header = () => {
         <li className={styles.item}>
           <img src="/Mail.svg" className={styles.icon}></img>mail@gmail.com
         </li>
-        {Cookies.get("authToken") == null ? (
+        {!session ? (
           <li className={styles.item}>
             <Link href="/login" className="link">
               Войти
