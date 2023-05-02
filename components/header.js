@@ -189,7 +189,7 @@ const Header = () => {
         </li>
         <li className={styles.item}>
           <div className={styles.iconswrapper}>
-            <Link href="#">
+            <Link href="/admin-dashboard">
               <img
                 className={styles.lowerheadericon}
                 src="/User_black.svg"

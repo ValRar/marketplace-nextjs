@@ -10,9 +10,9 @@ function renderRadio(count) {
 }
 
 const Slider = ({ images }) => {
+  const [curImg, setCurImg] = useState(0);
   if (typeof images === "object") {
     const imagesCount = images.length;
-    const [curImg, setCurImg] = useState(0);
 
     return (
       <div className={styles.container}>
