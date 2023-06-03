@@ -10,6 +10,7 @@ const Dashboard = () => {
         const price = document.getElementById("price")
         const info = document.getElementById("info")
         const imageInputs = document.getElementsByClassName("image-input")
+        const properties = document.getElementById("properties")
 
         const images = []
         for (let i = 0; i < imageInputs.length; i++) {
@@ -20,7 +21,8 @@ const Dashboard = () => {
             amount: amount.value,
             price: price.value,
             info: info.value,
-            images: images
+            images: images,
+            properties: properties.value
         }
         const response = await fetch("../api/admin/addProduct", {body: JSON.stringify(requestBody), method: "POST"})
         if (response.status === 200) alert("Успешно!")
@@ -52,6 +54,7 @@ const Dashboard = () => {
                 const root = document.getElementById("imageRoot")
                 root.appendChild(createInput())
             }}>Добавить изображение</button>
+            <textarea placeholder="Характеристики: Ключ:Значение, Ключ:Значение" id="properties"></textarea>
 
             <button onClick={handleSubmit}>Добавить</button>
         </section>

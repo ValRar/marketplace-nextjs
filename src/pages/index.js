@@ -2,19 +2,27 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Card from '../../components/card'
 import { getBasic } from './api/products/getBasic'
+import { getCart } from './api/cart/getId'
+
 
 export async function getServerSideProps(context) {
   const productsRequest = await getBasic()
   if (productsRequest) {
     const res = JSON.parse(productsRequest)
-    return { props: {res} }
+    if (context.req.cookies["authToken"]) {
+      const cart = await getCart(context.req.cookies["authToken"])
+      return { props: {res, cart} }
+    }
+    const cart = []
+    return { props: {res, cart } }
   } else {
     const res = []
-    return { props: {res} }
+    return { props: {res, cart} }
   }
 }
 
-export default function Home({ res }) {
+export default function Home({ res, cart }) {
+
   return (
     <>
       <Head>
@@ -48,7 +56,7 @@ export default function Home({ res }) {
       <h1 className={styles.title}>Популярные товары</h1>
       <div className={styles.cardsWrapper}>
         {res.map(({id, title, amount, rating, price, img}) => (
-            <Card key={id} title={title} amount={amount} rating={rating} imagePath={JSON.parse(img)[0]} price={price} id={id}></Card>
+            <Card key={id} title={title} amount={amount} rating={rating} imagePath={JSON.parse(img)[0]} price={price} id={id} buyChecked={cart.includes(id)}></Card>
         ))}
       </div>
     </>

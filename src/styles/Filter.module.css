@@ -1,0 +1,62 @@
+.wrapper {
+    padding-left: 1rem;
+    width: fit-content;
+    margin-right: 2rem;
+}
+.categoryList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.categoryList > li {
+    margin: .5rem 0;
+    color: #535353;
+}
+.title {
+    color: #535353;
+}
+.priceInput {
+    width: 5rem;
+    margin-right: .5rem;
+    border: 1px solid #821BF0;
+    padding: .25rem .5rem;
+    border-radius: 5px;
+}
+.checkboxLabel {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 4px;    
+    border: 1px solid #821BF0;
+    margin-right: .25rem;
+}
+.checkbox:checked ~ .checkboxLabel {
+    background-color: #821BF0;
+    background-image: url("/Checked.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: .65rem;
+}
+.availabilityRow {
+    display: flex;
+    align-items: center;
+}
+.textLabel {
+    cursor: pointer;
+}
+.confirmButton {
+    padding: .75rem 2rem;
+    border-radius: 99999rem;
+    border: none;
+    background-color: #821BF0;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1rem auto;
+    display: block;
+    cursor: pointer;
+}
+.confirmButton:hover {
+    background-color: #6d0dd3;
+}

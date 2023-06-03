@@ -2,6 +2,7 @@
     width: 15rem;
     padding: 1.5rem;
     margin: .5rem;
+    height: fit-content;
 }
 .card:hover {
     box-shadow: 6px 11px 36px rgba(0, 0, 0, 0.04);

@@ -50,6 +50,18 @@
 .buy:hover {
     background-color: #3512c5;
 }
+.inCart {
+    margin-top: 1rem;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: #16C1A1;
+    border-radius: 99999rem;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
 .accordionRadio {
     display: none;
 }

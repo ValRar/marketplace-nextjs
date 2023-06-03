@@ -17,7 +17,6 @@ const Header = () => {
 
     useEffect(() => {
       const isCookie = Cookies.get("authToken") != undefined
-      console.log(isCookie)
       setSession(isCookie)
     })
 
@@ -207,7 +206,7 @@ const Header = () => {
                 src="/Heart_black.svg"
               ></img>
             </Link>
-            <Link href="#">
+            <Link href="/cart">
               <img
                 className={styles.lowerheadericon}
                 src="/Shopping cart_black.svg"

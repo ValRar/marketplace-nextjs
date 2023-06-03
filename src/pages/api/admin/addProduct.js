@@ -5,12 +5,12 @@ export default function handler(req, res) {
     res.status(405).send("Only post allowed!")
     return
   }
-  const {name, amount, price, info, images} = JSON.parse(req.body)
-  if (!name || !amount || !price || !info || !images) {
+  const {name, amount, price, info, images, properties} = JSON.parse(req.body)
+  if (!name || !amount || !price || !info || !images || !properties) {
     res.status(400).send("All parameters must be provided!")
     return
   }
-  sqlClient.query(`INSERT INTO products(title, amount, img, info, price) VALUES ("${name}", ${amount}, '${JSON.stringify(images)}', "${info}", ${price})`, (err, sqlRes) => {
+  sqlClient.query(`INSERT INTO products(title, amount, img, info, price, properties) VALUES ("${name}", ${amount}, '${JSON.stringify(images)}', "${info}", ${price}, "${properties}")`, (err, sqlRes) => {
     if (err) {
         console.log(err)
         res.status(500).send("Internal Server error!")

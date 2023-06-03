@@ -1,0 +1,14 @@
+.propertiesRow {
+    border-bottom: #E7E7E7 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+.propertiesRow > h3 {
+    font-weight: 700;
+    color: #535353;
+}
+.wrapper {
+    width: 100%;
+}

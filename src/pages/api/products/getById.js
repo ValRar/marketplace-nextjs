@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
 export function getById(id) {
   const response = new Promise((resolve, reject) => {
-    sqlClient.query(`SELECT title, amount, rating, price, img, info FROM products WHERE id = ${id};`, (err, queryRes) => {
+    sqlClient.query(`SELECT title, amount, rating, price, img, info, properties FROM products WHERE id = ${id};`, (err, queryRes) => {
       if (err) {
         console.log(err)
         reject(err)

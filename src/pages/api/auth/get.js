@@ -17,6 +17,6 @@ export default function handler(req, res) {
       res.status(404).send(null)
       return
     }
-    res.status(200).json(queryRes[0])
+    res.status(200).send(JSON.stringify(queryRes[0]))
   })
 }

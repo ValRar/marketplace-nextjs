@@ -1,0 +1,58 @@
+.wrapper {
+    margin: 2rem;
+    min-height: 60vh;
+}
+.headersWrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #F3F3F3 solid 1px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 10rem;
+}
+.headersWrapper > h2 {
+    margin: 0;
+}
+.header {
+    color: #ABABAB;
+}
+.price {
+    color: #413E70;
+}
+.imgWrapper {
+    display: flex;
+    align-items: center;
+}
+.imgWrapper > img {
+    margin-right: 2rem;
+    height: 8rem;
+    width: 8rem;
+    object-fit: contain;
+}
+.imgWrapper > h3 {
+    color: #535353;
+}
+.productWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: #F3F3F3 solid 1px;
+}
+.delButton {
+    background-image: url("/close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    background-color: #F5F3FF;
+    border-radius: 9999rem;
+    margin-left: 5rem;
+    cursor: pointer;
+    transition: .1s background-color;
+}
+.delButton:active {
+    background-color: #c3bbe9;
+}
